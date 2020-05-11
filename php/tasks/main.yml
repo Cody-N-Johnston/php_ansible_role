@@ -1,0 +1,13 @@
+---
+- name: Include OS variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+# tasks file for php
+- name: Add tasks for OS
+  include_tasks: "{{ ansible_os_family }}.yml"
+
+- name: Make sure php-fpm is started
+  service:
+    name: "php-fpm"
+    enabled: yes
+    state: started
