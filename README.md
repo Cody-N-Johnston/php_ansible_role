@@ -14,7 +14,7 @@ Role Variables
 
 Available variables (`vars/main.yml`) are listed here alongside default values (`defaults/main.yml`)
 
-####vars
+#### vars  
 `php_packages`
  A list of packages to install. Currently this is not OS specific. You may want to install additional packages depending on your application. 
  
@@ -23,12 +23,12 @@ Available variables (`vars/main.yml`) are listed here alongside default values (
 A list of php-fpm packages that need to be installed.
 
 
-`install_php_fpm`
+`install_php_fpm`  
 A true/false (`true by default`) value indicating whether or not you want to install php-fpm. More details about this package can be found [here](https://www.php.net/manual/en/install.fpm.php)   
 When this flag is set to true this will install one version of php-fpm it also currently tries to mitigate needing to specify the version number  
 in order to manage processes or the service itself. As such there are configuration files that are used/modified in order to achieve this.
 
-####defaults
+#### defaults
 `PROJECT_ROOT`  
 Root of your PHP project, will be used in config files.
 
@@ -38,7 +38,7 @@ PHP version on supported operating systems this can support major version 5.6 - 
 `php_extra_packages`  
 Any extra packages you need installed, is empty by default.
 
-####Debian (`vars/Debian.yml`)
+#### Debian (`vars/Debian.yml`)  
 `php_fpm_conf_path`  
 Path to php-fpm settings
 
@@ -54,16 +54,17 @@ Path to default init/upstart script use for configuration.
 Dependencies
 ------------
 
-Currently there are no dependencies on other roles, however some options such as those regarding php-fpm will need to be utilized  
-in order to obtain performance benefits or use the NGINX role I have created.
+Currently there are no dependencies on other roles, however some options such as those regarding php-fpm will need to be utilized in order to obtain performance benefits or use the NGINX role I have created.
 
 Example Playbook
 ----------------
 
+```
    - hosts: default
      become: yes
      roles:
        - { role: php, php_version: '7.4', install_php_fpm: true }
+```
 
 License
 -------
