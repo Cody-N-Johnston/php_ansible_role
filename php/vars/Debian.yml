@@ -1,5 +1,0 @@
----
-php_fpm_conf_path: "/etc/php/{{ php_version }}/fpm"
-php_fpm_pool_conf_path: "{{ php_fpm_conf_path }}/pool.d/www.conf"
-php_fpm_pool_file: "www.conf"
-php_fpm_service_file: "php-fpm"
