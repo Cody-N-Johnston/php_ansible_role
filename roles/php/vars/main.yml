@@ -14,7 +14,7 @@ php_packages:
   - "php{{ php_version }}-mbstring"
   - "php{{ php_version}}-dom"
   - "php{{ php_version }}-zip"
-  - "php{{ php_version }}-json"
+  #- "php{{ php_version }}-json"
   - "php{{ php_version }}-opcache"
   - "php{{ php_version }}-xml"
   - "php{{ php_version }}-yaml"
